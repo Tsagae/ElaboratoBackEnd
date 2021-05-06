@@ -1,3 +1,6 @@
+# DB login credentials
+loginData.js
+
 # Logs
 logs
 *.log
