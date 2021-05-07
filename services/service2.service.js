@@ -12,8 +12,8 @@ module.exports = {
       database: loginData.database,
     });
 
-    var sql = "SELECT getIdByGameName('Age of Empires');";
-    //var sql = "SELECT * FROM All_Games;"
+    //var sql = "SELECT getIdByGameName('Age of Empires');";
+    var sql = "SELECT * FROM All_Games;"
 
     con.connect(function (err) {
       if (err) return err; //TODO remove for production
