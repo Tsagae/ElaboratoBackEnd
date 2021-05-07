@@ -3,7 +3,12 @@ const loginData = require("../loginData");
 const mysql = require("mysql");
 
 module.export = {
-  execQuery(sql) {
+  prova: () =>{
+    return res.status(200).json({ provaJson: "provafunziona" });
+  },
+
+  execQuery: (sql) => {
+    var outResult;
     let con = mysql.createConnection({
       host: loginData.host,
       user: loginData.user,
@@ -12,14 +17,14 @@ module.export = {
     });
 
     con.connect(function (err) {
-      if (err) return err;
+      if (err) outResult = err; //TODO remove for production
       console.log("Connected!");
       con.query(sql, function (err, result, fields) {
-        if (err) return err;
+        if (err) outResult = err; //TODO remove for production
         console.log("Result: " + JSON.stringify(result));
-        return result;
+        outResult = result;
       });
     });
-    return 1;
-  }
-}
+    return res.status(200).json({ out: outResult });
+  },
+};
