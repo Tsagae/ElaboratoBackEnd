@@ -7,6 +7,6 @@ module.exports = {
         	'Item2': 'Desc item2'
         }
 
-        return res.status(200).json('prova+richiesta')
+        return res.status(200).json({'id': req.qury.id});
     }
 }
