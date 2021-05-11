@@ -16,7 +16,7 @@ function execQuery(sql, res) {
     console.log("Connected!");
     con.query(sql, function (err, result, fields) {
       if (err) return err; //TODO remove for production
-      console.log("Result: " + JSON.stringify(result));
+      //console.log("Result: " + JSON.stringify(result));
       return res.status(200).json(result);
     });
   });
