@@ -5,5 +5,6 @@ const queryDB = require('../services/queryDB.service');
 
 router.get('/', queryDB.getList);
 router.get('/getIdByGameName', queryDB.getIdByGameName);
+router.get('/getTwitchGlobal_HoursWatched', queryDB.getTwitchGlobal_HoursWatched);
 
 module.exports = router;

@@ -24,10 +24,14 @@ function execQuery(sql, res) {
 
 module.exports = {
   getIdByGameName: (req, res) => {
-    var sql = "SELECT getIdByGameName(" + req.query.name + ");";
+    let sql = "SELECT getIdByGameName(" + req.query.name + ");";
     execQuery(sql, res);
   },
   getList: (req, res) => {
     return res.status(200).json({list: "list"});
   },
+  getTwitchGlobal_HoursWatched:(req,res) => {
+    let sql = "SELECT * FROM db_zaghe.TwitchGlobal_HoursWatched;";
+    execQuery(sql, res);
+  }
 };
