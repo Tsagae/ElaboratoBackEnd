@@ -33,5 +33,9 @@ module.exports = {
   getTwitchGlobal_HoursWatched:(req,res) => {
     let sql = "SELECT * FROM db_zaghe.TwitchGlobal_HoursWatched;";
     execQuery(sql, res);
+  },
+  getHistoricalEsportData_TournamentCount:(req,res) => {
+    let sql = "SELECT * FROM HistoricalEsportData_TournamentCount;";
+    execQuery(sql, res);
   }
 };
