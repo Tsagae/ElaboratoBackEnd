@@ -37,5 +37,5 @@ module.exports = {
   getHistoricalEsportData_TournamentCount:(req,res) => {
     let sql = "SELECT * FROM HistoricalEsportData_TournamentCount;";
     execQuery(sql, res);
-  }
+  },
 };
