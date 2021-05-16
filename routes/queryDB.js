@@ -7,5 +7,6 @@ router.get('/', queryDB.getList);
 router.get('/getIdByGameName', queryDB.getIdByGameName);
 router.get('/getTwitchGlobal_HoursWatched', queryDB.getTwitchGlobal_HoursWatched);
 router.get('/getHistoricalEsportData_Post2016', queryDB.getHistoricalEsportData_Post2016);
+router.get('/getMostViewed12Months', queryDB.getMostViewed12Months);
 
 module.exports = router;
