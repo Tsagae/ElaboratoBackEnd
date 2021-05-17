@@ -1,6 +1,7 @@
 const express = require("express");
 
 function execQuery(sql, res) {
+
   const loginData = require("../loginData");
   const mysql = require("mysql");
 
@@ -20,6 +21,7 @@ function execQuery(sql, res) {
       return res.status(200).json(result);
     });
   });
+
 }
 
 module.exports = {
@@ -44,6 +46,10 @@ module.exports = {
   },
   getMostPlayed12Months: (req, res) => {
     let sql = "SELECT * FROM db_zaghe.MostPlayed12Months;";
+    execQuery(sql, res);
+  },
+  getMostWatched12Months: (req, res) => {
+    let sql = "SELECT * FROM db_zaghe.MostWatched12Months;";
     execQuery(sql, res);
   },
 };
