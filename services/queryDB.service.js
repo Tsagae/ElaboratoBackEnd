@@ -42,4 +42,8 @@ module.exports = {
     let sql = "SELECT * FROM MostViewed12Months;";
     execQuery(sql, res);
   },
+  getMostPlayed12Months: (req, res) => {
+    let sql = "SELECT * FROM db_zaghe.MostPlayed12Months;";
+    execQuery(sql, res);
+  },
 };
