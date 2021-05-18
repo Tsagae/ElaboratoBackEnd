@@ -29,31 +29,28 @@ module.exports = {
     let sql = "SELECT getIdByGameName(" + req.query.name + ");";
     execQuery(sql, res);
   },
-  getList: (req, res) => {
-    return res.status(200).json({ list: "list" });
-  },
-  getTwitchGlobal_HoursWatched: (req, res) => {
-    let sql = "SELECT * FROM db_zaghe.TwitchGlobal_HoursWatched;";
-    execQuery(sql, res);
-  },
   getHistoricalEsportData_Post2016: (req, res) => {
     let sql = "SELECT * FROM HistoricalEsportData_Post2016;";
     execQuery(sql, res);
   },
-  getMostViewed12Months: (req, res) => {
-    let sql = "SELECT * FROM MostViewed12Months;";
+  getHoursWatched12Months: (req, res) => {
+    let sql = "SELECT * FROM db_zaghe.HoursWatched12Months;";
     execQuery(sql, res);
   },
   getMostPlayed12Months: (req, res) => {
     let sql = "SELECT * FROM db_zaghe.MostPlayed12Months;";
     execQuery(sql, res);
   },
-  getMostWatched12Months: (req, res) => {
-    let sql = "SELECT * FROM db_zaghe.MostWatched12Months;";
+  getMostViewed12Months: (req, res) => {
+    let sql = "SELECT * FROM MostViewed12Months;";
     execQuery(sql, res);
   },
-  getAllEsportGames: (req, res) => {
-    let sql = "CALL db_zaghe.getAllEsportGames(" + req.query.offset + ", " + req.query.limit + ");";
+  getTwitchGlobal_HoursWatched: (req, res) => {
+    let sql = "SELECT * FROM db_zaghe.TwitchGlobal_HoursWatched;";
+    execQuery(sql, res);
+  },
+  getEsportGamesOffset: (req, res) => {
+    let sql = "CALL db_zaghe.getEsportGamesOffset(" + req.query.offset + ", " + req.query.limit + ");";
     execQuery(sql, res);
   },
 };
