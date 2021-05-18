@@ -52,4 +52,8 @@ module.exports = {
     let sql = "SELECT * FROM db_zaghe.MostWatched12Months;";
     execQuery(sql, res);
   },
+  getAllEsportGames: (req, res) => {
+    let sql = "CALL db_zaghe.getAllEsportGames(" + req.query.offset + ", " + req.query.limit + ");";
+    execQuery(sql, res);
+  },
 };

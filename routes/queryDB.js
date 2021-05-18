@@ -10,5 +10,6 @@ router.get('/getHistoricalEsportData_Post2016', queryDB.getHistoricalEsportData_
 router.get('/getMostViewed12Months', queryDB.getMostViewed12Months);
 router.get('/getMostPlayed12Months', queryDB.getMostPlayed12Months);
 router.get('/getMostWatched12Months', queryDB.getMostWatched12Months);
+router.get('/getAllEsportGames', queryDB.getAllEsportGames);
 
 module.exports = router;
