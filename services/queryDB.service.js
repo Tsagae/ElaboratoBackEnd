@@ -49,8 +49,8 @@ module.exports = {
     let sql = "SELECT * FROM db_zaghe.TwitchGlobal_HoursWatched;";
     execQuery(sql, res);
   },
-  getEsportGamesOffset: (req, res) => {
-    let sql = "CALL db_zaghe.getEsportGamesOffset(" + req.query.offset + ", " + req.query.limit + ");";
+  getMostPlayedEsportGamesOffset: (req, res) => {
+    let sql = "CALL db_zaghe.getMostPlayedEsportGamesOffset(" + req.query.offset + ", " + req.query.limit + ");";
     execQuery(sql, res);
   },
 };
