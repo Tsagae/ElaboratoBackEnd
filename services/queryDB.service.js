@@ -57,4 +57,8 @@ module.exports = {
     let sql = "CALL db_zaghe.getMostViewedEsportGamesOffset(" + req.query.offset + ", " + req.query.limit + ");";
     execQuery(sql, res);
   },
+  getGameInfo: (req, res) => {
+    let sql = "CALL `db_zaghe`.`getGameInfo`(" + req.query.gameID + ");";
+    execQuery(sql, res);
+  },
 };
