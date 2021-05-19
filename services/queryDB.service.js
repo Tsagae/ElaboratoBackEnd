@@ -13,12 +13,10 @@ function execQuery(sql, res) {
   });
 
   con.connect(function (err) {
-    //if (err) return err; //TODO remove for production
-    if (err) return res.status(500);
+    if (err) return res.status(500).json({error:"server error"});
     console.log("Connected!");
     con.query(sql, function (err, result, fields) {
-      //if (err) return err; //TODO remove for production
-      if (err) return res.status(500);
+      if (err) return res.status(500).json({error:"query error"});
       //console.log("Result: " + JSON.stringify(result));
       return res.status(200).json(result);
     });
