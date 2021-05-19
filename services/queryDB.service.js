@@ -42,7 +42,7 @@ module.exports = {
     execQuery(sql, res);
   },
   getMostViewed12Months: (req, res) => {
-    let sql = "SELECT * FROM MostViewed12Months;";
+    let sql = "SELECT * FROM MostViewed12Months LIMIT 15;";
     execQuery(sql, res);
   },
   getTwitchGlobal_HoursWatched: (req, res) => {
@@ -51,6 +51,10 @@ module.exports = {
   },
   getMostPlayedEsportGamesOffset: (req, res) => {
     let sql = "CALL db_zaghe.getMostPlayedEsportGamesOffset(" + req.query.offset + ", " + req.query.limit + ");";
+    execQuery(sql, res);
+  },
+  getMostViewedEsportGamesOffset: (req, res) => {
+    let sql = "CALL db_zaghe.getMostViewedEsportGamesOffset(" + req.query.offset + ", " + req.query.limit + ");";
     execQuery(sql, res);
   },
 };
