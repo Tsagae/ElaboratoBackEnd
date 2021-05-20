@@ -1,32 +1,43 @@
 const express = require("express");
 
+const loginData = require("../loginData");
+const mysql = require("mysql");
+
+var pool = mysql.createPool({
+  host: loginData.host,
+  user: loginData.user,
+  password: loginData.password,
+  database: loginData.database,
+  connectionLimit: loginData.connectionLimit,
+});
+
+pool.getConnection(function(err, connection) {
+  if(err) {
+      console.log('[ERROR] Connecting to database "' + err.toString() + '"');
+      setTimeout(function() { database_connection(); }, 2500);
+  }
+  else
+  {
+      pool.query('SET NAMES utf8');
+      pool.query('SET CHARACTER SET utf8');
+      console.log('[INFO] Connected to database and set utf8!');
+  }
+});
+
 function execQuery(sql, res) {
 
-  const loginData = require("../loginData");
-  const mysql = require("mysql");
-
-  var con = mysql.createConnection({
-    host: loginData.host,
-    user: loginData.user,
-    password: loginData.password,
-    database: loginData.database,
-  });
-
-  con.connect(function (err) {
-    if (err) {
-      console.log(err)
-      return res.status(500).json({ error: "server error" })
-    };
-    console.log("Connected!");
-    con.query(sql, function (err, result, fields) {
+  
+    
+    pool.query(sql, function (err, result, fields) {
       if (err) {
         console.log(err)
         return res.status(500).json({ error: "query error" })
       };
       //console.log("Result: " + JSON.stringify(result));
+      console.log("Query!")
       return res.status(200).json(result);
     });
-  });
+  
 
 }
 
