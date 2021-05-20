@@ -13,10 +13,16 @@ function execQuery(sql, res) {
   });
 
   con.connect(function (err) {
-    if (err) return res.status(500).json({error:"server error"});
+    if (err) {
+      console.log(err)
+      return res.status(500).json({ error: "server error" })
+    };
     console.log("Connected!");
     con.query(sql, function (err, result, fields) {
-      if (err) return res.status(500).json({error:"query error"});
+      if (err) {
+        console.log(err)
+        return res.status(500).json({ error: "query error" })
+      };
       //console.log("Result: " + JSON.stringify(result));
       return res.status(200).json(result);
     });
@@ -33,8 +39,8 @@ module.exports = {
     let sql = "SELECT * FROM HistoricalEsportData_Post2016;";
     execQuery(sql, res);
   },
-  getHoursWatched12Months: (req, res) => {
-    let sql = "SELECT * FROM db_zaghe.HoursWatched12Months;";
+  getHoursWatched: (req, res) => {
+    let sql = "SELECT * FROM db_zaghe.HoursWatched;";
     execQuery(sql, res);
   },
   getMostPlayed12Months: (req, res) => {
