@@ -11,33 +11,32 @@ var pool = mysql.createPool({
   connectionLimit: loginData.connectionLimit,
 });
 
-pool.getConnection(function(err, connection) {
-  if(err) {
-      console.log('[ERROR] Connecting to database "' + err.toString() + '"');
-      setTimeout(function() { database_connection(); }, 2500);
+pool.getConnection(function (err, connection) {
+  if (err) {
+    console.log('[ERROR] Connecting to database "' + err.toString() + '"');
+    setTimeout(function () { database_connection(); }, 2500);
   }
-  else
-  {
-      pool.query('SET NAMES utf8');
-      pool.query('SET CHARACTER SET utf8');
-      console.log('[INFO] Connected to database and set utf8!');
+  else {
+    pool.query('SET NAMES utf8');
+    pool.query('SET CHARACTER SET utf8');
+    console.log('[INFO] Connected to database and set utf8!');
   }
 });
 
 function execQuery(sql, res) {
 
-  
-    
-    pool.query(sql, function (err, result, fields) {
-      if (err) {
-        console.log(err)
-        return res.status(500).json({ error: "query error" })
-      };
-      //console.log("Result: " + JSON.stringify(result));
-      console.log("Query!")
-      return res.status(200).json(result);
-    });
-  
+
+
+  pool.query(sql, function (err, result, fields) {
+    if (err) {
+      console.log(err)
+      return res.status(500).json({ error: "query error" })
+    };
+    //console.log("Result: " + JSON.stringify(result));
+    console.log("Query!")
+    return res.status(200).json(result);
+  });
+
 
 }
 
@@ -86,4 +85,9 @@ module.exports = {
     let sql = "CALL db_zaghe.getHighestEarningPlayersOffset(" + req.query.offset + ", " + req.query.limit + ");";
     execQuery(sql, res);
   },
+  getHighestEarningCountries: (req, res) => {
+    let sql = "CALL db_zaghe.getHighestEarningCountries();";
+    execQuery(sql, res);
+  },
+
 };

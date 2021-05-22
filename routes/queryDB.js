@@ -14,4 +14,6 @@ router.get('/getMostViewedEsportGamesOffset', queryDB.getMostViewedEsportGamesOf
 router.get('/getGameInfo', queryDB.getGameInfo);
 router.get('/getGeneralGameInfo', queryDB.getGeneralGameInfo);
 router.get('/getHighestEarningPlayersOffset', queryDB.getHighestEarningPlayersOffset);
+router.get('/getHighestEarningCountries', queryDB.getHighestEarningCountries);
+
 module.exports = router;
