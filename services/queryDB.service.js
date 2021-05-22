@@ -82,4 +82,8 @@ module.exports = {
     let sql = "CALL `db_zaghe`.`getGeneralGameInfo`(" + req.query.gameID + ");";
     execQuery(sql, res);
   },
+  getHighestEarningPlayersOffset: (req, res) => {
+    let sql = "CALL db_zaghe.getHighestEarningPlayersOffset(" + req.query.offset + ", " + req.query.limit + ");";
+    execQuery(sql, res);
+  },
 };
