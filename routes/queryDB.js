@@ -12,4 +12,6 @@ router.get('/getTwitchGlobal_HoursWatched', queryDB.getTwitchGlobal_HoursWatched
 router.get('/getMostPlayedEsportGamesOffset', queryDB.getMostPlayedEsportGamesOffset);
 router.get('/getMostViewedEsportGamesOffset', queryDB.getMostViewedEsportGamesOffset);
 router.get('/getGameInfo', queryDB.getGameInfo);
+router.get('/getGeneralGameInfo', queryDB.getGeneralGameInfo);
+
 module.exports = router;

@@ -78,4 +78,8 @@ module.exports = {
     let sql = "CALL `db_zaghe`.`getGameInfo`(" + req.query.gameID + ");";
     execQuery(sql, res);
   },
+  getGeneralGameInfo: (req, res) => {
+    let sql = "CALL `db_zaghe`.`getGeneralGameInfo`(" + req.query.gameID + ");";
+    execQuery(sql, res);
+  },
 };
