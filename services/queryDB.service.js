@@ -86,4 +86,9 @@ module.exports = {
     let sql = "CALL db_zaghe.getHighestEarningCountries();";
     execQuery(sql, res);
   },
+
+  getPureAllGamesId: (req, res) => {
+    let sql = "SELECT DISTINCT GameId FROM AllTournamentsPure ORDER BY GameId ASC;";
+    execQuery(sql, res);
+  },
 };
