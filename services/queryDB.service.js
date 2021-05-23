@@ -25,8 +25,6 @@ pool.getConnection(function (err, connection) {
 
 function execQuery(sql, res) {
 
-
-
   pool.query(sql, function (err, result, fields) {
     if (err) {
       console.log(err)
@@ -36,7 +34,6 @@ function execQuery(sql, res) {
     console.log("Query!")
     return res.status(200).json(result);
   });
-
 
 }
 
@@ -89,5 +86,4 @@ module.exports = {
     let sql = "CALL db_zaghe.getHighestEarningCountries();";
     execQuery(sql, res);
   },
-
 };
