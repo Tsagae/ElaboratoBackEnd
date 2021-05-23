@@ -82,4 +82,13 @@ module.exports = {
     let sql = "CALL `db_zaghe`.`getGeneralGameInfo`(" + req.query.gameID + ");";
     execQuery(sql, res);
   },
+	insertEsportData: (req, res) => {
+		let sql = "";
+		let dataLocal = "";
+		while(data != {})
+		fetch("https://api.esportsearnings.com/v0/LookupHighestEarningPlayers?apikey=&offset=")
+		      .then((res) => res.text())
+		      .then((data) => {dataLocal = this.processChartData(JSON.parse(data))}); //incomplete
+		  
+	}
 };
