@@ -87,8 +87,8 @@ module.exports = {
     execQuery(sql, res);
   },
 
-  getPureAllGamesId: (req, res) => {
-    let sql = "SELECT DISTINCT GameId FROM AllTournamentsPure ORDER BY GameId ASC;";
+  getAllGames: (req, res) => {
+    let sql = "CALL getAllGames();";
     execQuery(sql, res);
   },
 };
