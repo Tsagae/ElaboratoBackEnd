@@ -95,8 +95,11 @@ module.exports = {
     execQuery(sql, res);
   },
   getHighestEarningPlayersByGame: (req, res) => {
-    let sql = "CALL db_zaghe.getHighestEarningPlayersByGame(" + req.query.gameID +");";
+    let sql = "CALL db_zaghe.getHighestEarningPlayersByGame(" + req.query.gameID + ");";
     execQuery(sql, res);
   },
-
+  getHighestEarningPlayersByGame: (req, res) => {
+    let sql = "CALL db_zaghe.getTournamentByGameOffset(" + req.query.gameID + ", " + req.query.offset + ", " + req.query.limit + ");";
+    execQuery(sql, res);
+  },
 };
