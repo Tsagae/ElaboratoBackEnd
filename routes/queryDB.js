@@ -16,5 +16,6 @@ router.get('/getGeneralGameInfo', queryDB.getGeneralGameInfo);
 router.get('/getHighestEarningPlayersOffset', queryDB.getHighestEarningPlayersOffset);
 router.get('/getHighestEarningCountries', queryDB.getHighestEarningCountries);
 router.get('/getAllGames', queryDB.getAllGames);
+router.get('/getHighestEarningCountries', queryDB.getHighestEarningCountries);
 
 module.exports = router;

@@ -91,4 +91,9 @@ module.exports = {
     let sql = "CALL getAllGames();";
     execQuery(sql, res);
   },
+
+  getHighestEarningCountries: (req, res) => {
+    let sql = "CALL getHighestEarningCountries();";
+    execQuery(sql, res);
+  },
 };
