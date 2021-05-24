@@ -86,14 +86,17 @@ module.exports = {
     let sql = "CALL db_zaghe.getHighestEarningCountries();";
     execQuery(sql, res);
   },
-
   getAllGames: (req, res) => {
     let sql = "CALL getAllGames();";
     execQuery(sql, res);
   },
-
   getHighestEarningCountries: (req, res) => {
     let sql = "CALL getHighestEarningCountries();";
     execQuery(sql, res);
   },
+  getHighestEarningPlayersByGame: (req, res) => {
+    let sql = "CALL db_zaghe.getHighestEarningPlayersByGame(" + req.query.gameID +");";
+    execQuery(sql, res);
+  },
+
 };
