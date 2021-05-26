@@ -102,4 +102,8 @@ module.exports = {
     let sql = "CALL db_zaghe.getTournamentByGameOffset(" + req.query.gameID + ", " + req.query.offset + ", " + req.query.limit + ");";
     execQuery(sql, res);
   },
+  getAnnualEsportGrowth: (req, res) => {
+    let sql = "CALL db_zaghe.getAnnualEsportGrowth();";
+    execQuery(sql, res);
+  },
 };
