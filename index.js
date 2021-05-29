@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/menu', menu);
-app.use('/service2', service2);
+app.use('/', service2);
 app.use('/queryDB', queryDB);
 
 module.exports = app;
