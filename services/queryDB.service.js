@@ -106,5 +106,9 @@ module.exports = {
     let sql = "CALL db_zaghe.getHighestEarningTeamsByGame(" + req.query.gameID + ");";
     execQuery(sql, res);
   },
+  getHighestEarningTeams: (req, res) => {
+    let sql = "CALL db_zaghe.getHighestEarningTeams();";
+    execQuery(sql, res);
+  },
   
 };

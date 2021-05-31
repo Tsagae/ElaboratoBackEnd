@@ -21,5 +21,5 @@ router.get('/getHighestEarningPlayersByGame', queryDB.getHighestEarningPlayersBy
 router.get('/getTournamentByGameOffset', queryDB.getTournamentByGameOffset);
 router.get('/getAnnualEsportGrowth', queryDB.getAnnualEsportGrowth);
 router.get('/getHighestEarningTeamsByGame', queryDB.getHighestEarningTeamsByGame);
-
+router.get('/getHighestEarningTeams', queryDB.getHighestEarningTeams);
 module.exports = router;
