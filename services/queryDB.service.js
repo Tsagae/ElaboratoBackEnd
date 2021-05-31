@@ -90,10 +90,6 @@ module.exports = {
     let sql = "CALL getAllGames();";
     execQuery(sql, res);
   },
-  getHighestEarningCountries: (req, res) => {
-    let sql = "CALL getHighestEarningCountries();";
-    execQuery(sql, res);
-  },
   getHighestEarningPlayersByGame: (req, res) => {
     let sql = "CALL db_zaghe.getHighestEarningPlayersByGame(" + req.query.gameID + ");";
     execQuery(sql, res);
@@ -106,4 +102,9 @@ module.exports = {
     let sql = "CALL db_zaghe.getAnnualEsportGrowth();";
     execQuery(sql, res);
   },
+  getHighestEarningTeamsByGame: (req, res) => {
+    let sql = "CALL db_zaghe.getHighestEarningTeamsByGame(" + req.query.gameID + ");";
+    execQuery(sql, res);
+  },
+  
 };
