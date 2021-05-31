@@ -523,7 +523,7 @@ Pagina Game (visualizzazione delle statistiche del singolo gioco)
 
 # Soluzione Hosting
 
-Il sito è hostato su un VPS (virtual private server) di [Contabo](https://contabo.com/en/) con 4 Cores, 8 GB RAM,200 GB SSD.
+Il sito è hostato su un VPS (virtual private server) di [Contabo](https://contabo.com/en/) con 4 Cores, 8 GB RAM,200 GB SSD, OS: Debian 10.
 
 Il web server è Node sia per l’API, sia per Sito.
 
